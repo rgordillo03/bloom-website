@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="theme-color" content="#FAF7F2" />
+<title>Bloom — coming soon</title>
+<meta name="description" content="A mindful garden for you, and the people you love. Be the first to know when Bloom opens." />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #FAF7F2;
+    --warm: #FDF9F3;
+    --terra: #C17F59;
+    --terra-d: #A66B45;
+    --sage: #8B9E7E;
+    --sage-d: #6B7E5E;
+    --sage-l: #B5C7A9;
+    --brown: #2E241C;
+    --brown-m: #5C4A3A;
+    --brown-l: #7A6A5A;
+    --gold: #C9A96E;
+    --peach: #F0D5C8;
+    --blush: #E8C4B8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--brown);
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    padding: 0;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 40% at 30% 10%, rgba(181,199,169,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 50% at 70% 90%, rgba(232,196,184,0.22) 0%, transparent 60%);
+    z-index: 0;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px 6px 10px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(193,127,89,0.2);
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--terra-d);
+    letter-spacing: 0.05em;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s ease both;
+  }
+  .badge::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--terra);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(38px, 9vw, 52px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--brown);
+    text-align: center;
+    margin-bottom: 18px;
+    animation: fadeUp 1s ease 0.15s both;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--terra);
+    font-weight: 500;
+    font-variation-settings: "opsz" 144;
+  }
+
+  .lead {
+    font-size: 16px;
+    color: var(--brown-m);
+    text-align: center;
+    line-height: 1.6;
+    max-width: 380px;
+    margin-bottom: 32px;
+    animation: fadeUp 1s ease 0.3s both;
+  }
+
+  /* ─── DEMO ANIMATION ─── */
+  .demo-wrap {
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 1/1;
+    margin-bottom: 36px;
+    position: relative;
+    animation: fadeUp 1.2s ease 0.45s both;
+  }
+
+  .demo-stage {
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #EDE4D3 0%, #D4C4A8 100%);
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+      0 20px 50px -15px rgba(46,36,28,0.25),
+      inset 0 1px 0 rgba(255,255,255,0.4);
+  }
+
+  /* Fridge */
+  .fridge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 80%;
+    background: linear-gradient(180deg, #F5EBD9 0%, #E0D3BD 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(46,36,28,0.15);
+    border: 1.5px solid rgba(46,36,28,0.08);
+  }
+  .fridge::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 32px;
+    background: rgba(46,36,28,0.2);
+    border-radius: 3px;
+  }
+
+  /* Bloom card on fridge */
+  .card-on-fridge {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 0) rotate(-3deg);
+    width: 50%;
+    aspect-ratio: 1.6/1;
+    background: linear-gradient(145deg, #FDF9F3 0%, #F5EBD9 100%);
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(46,36,28,0.2);
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+  }
+  .card-logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Fraunces', serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--brown);
+  }
+  .card-tag {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 7px;
+    color: var(--brown-m);
+    line-height: 1.3;
+  }
+
+  /* Phone tapping animation */
+  .phone {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    width: 30%;
+    aspect-ratio: 9/19;
+    background: var(--brown);
+    border-radius: 12px;
+    border: 1.5px solid rgba(0,0,0,0.3);
+    box-shadow: 0 8px 20px rgba(46,36,28,0.3);
+    overflow: hidden;
+    animation: phoneTap 6s ease-in-out infinite;
+    z-index: 3;
+  }
+  .phone-screen {
+    position: absolute;
+    inset: 4px;
+    background: var(--bg);
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* What appears on phone — garden bloom */
+  .phone-garden {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #E2EDD8 0%, #C8DDB5 50%, #B0C49E 100%);
+    position: relative;
+    opacity: 0;
+    animation: gardenAppear 6s ease-in-out infinite;
+  }
+  .phone-garden::before {
+    content: '🌸';
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 24px;
+    animation: bloomGrow 6s ease-in-out infinite;
+  }
+  .phone-garden::after {
+    content: '🌿';
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    font-size: 14px;
+    animation: leafGrow 6s ease-in-out infinite;
+  }
+
+  /* NFC waves */
+  .nfc-wave {
+    position: absolute;
+    bottom: 32%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .nfc-wave::before, .nfc-wave::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px solid var(--terra);
+    border-radius: 50%;
+    opacity: 0;
+    animation: nfcRipple 6s ease-in-out infinite;
+  }
+  .nfc-wave::after {
+    animation-delay: 0.4s;
+  }
+
+  /* Floating leaves decoration */
+  .deco-leaf {
+    position: absolute;
+    font-size: 16px;
+    opacity: 0.5;
+    animation: leafSway 5s ease-in-out infinite;
+  }
+  .deco-leaf-1 { top: 8%; left: 8%; animation-delay: 0s; }
+  .deco-leaf-2 { top: 12%; right: 10%; animation-delay: 1.5s; }
+  .deco-leaf-3 { bottom: 8%; left: 14%; animation-delay: 3s; }
+
+  /* ─── EMAIL FORM ─── */
+  .form-wrap {
+    width: 100%;
+    max-width: 380px;
+    animation: fadeUp 1s ease 0.6s both;
+  }
+
+  .form-label {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--brown);
+    text-align: center;
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+
+  .form-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .email-input {
+    flex: 1;
+    padding: 16px 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    border: 1.5px solid rgba(193,127,89,0.25);
+    border-radius: 14px;
+    background: var(--warm);
+    color: var(--brown);
+    transition: all 0.2s;
+    outline: none;
+  }
+  .email-input:focus {
+    border-color: var(--terra);
+    background: #fff;
+  }
+  .email-input::placeholder {
+    color: var(--brown-l);
+    opacity: 0.5;
+  }
+
+  .submit-btn {
+    padding: 16px 24px;
+    background: var(--brown);
+    color: var(--bg);
+    border: none;
+    border-radius: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    box-shadow: 0 6px 16px rgba(46,36,28,0.15);
+  }
+  .submit-btn:hover {
+    background: var(--terra-d);
+    transform: translateY(-1px);
+  }
+  .submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .form-note {
+    font-size: 11px;
+    color: var(--brown-l);
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  /* Success state */
+  .success {
+    text-align: center;
+    padding: 28px 20px;
+    animation: scaleIn 0.4s ease;
+  }
+  .success-emoji {
+    font-size: 44px;
+    margin-bottom: 12px;
+    display: inline-block;
+    animation: gentleFloat 2s ease-in-out infinite;
+  }
+  .success-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    color: var(--brown);
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+  .success-msg {
+    font-size: 14px;
+    color: var(--brown-m);
+    line-height: 1.6;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .error-msg {
+    background: rgba(199,80,80,0.08);
+    color: #C75050;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 40px;
+    text-align: center;
+    color: var(--brown-l);
+    font-size: 11px;
+    opacity: 0.7;
+    animation: fadeUp 1s ease 0.9s both;
+  }
+  footer span {
+    color: var(--terra);
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(193,127,89,0.4); }
+    50% { opacity: 0.8; box-shadow: 0 0 0 6px rgba(193,127,89,0); }
+  }
+  @keyframes gentleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  @keyframes leafSway {
+    0%, 100% { transform: rotate(0deg) translateY(0); }
+    50% { transform: rotate(8deg) translateY(-4px); }
+  }
+  @keyframes phoneTap {
+    0%, 18% { transform: translateX(-50%) translateY(40px); }
+    25%, 35% { transform: translateX(-50%) translateY(-10px); }
+    50%, 92% { transform: translateX(-50%) translateY(20px); }
+    100% { transform: translateX(-50%) translateY(40px); }
+  }
+  @keyframes nfcRipple {
+    0%, 22% { opacity: 0; transform: scale(0.4); }
+    28% { opacity: 0.7; transform: scale(0.6); }
+    40% { opacity: 0; transform: scale(1.4); }
+    100% { opacity: 0; transform: scale(0.4); }
+  }
+  @keyframes gardenAppear {
+    0%, 30% { opacity: 0; }
+    45%, 88% { opacity: 1; }
+    95%, 100% { opacity: 0; }
+  }
+  @keyframes bloomGrow {
+    0%, 35% { transform: translate(-50%, -50%) scale(0); }
+    55% { transform: translate(-50%, -50%) scale(1.2); }
+    65%, 90% { transform: translate(-50%, -50%) scale(1); }
+    95%, 100% { transform: translate(-50%, -50%) scale(0); }
+  }
+  @keyframes leafGrow {
+    0%, 50% { transform: translateX(-50%) scale(0); }
+    65% { transform: translateX(-50%) scale(1.1); }
+    75%, 92% { transform: translateX(-50%) scale(1); }
+    100% { transform: translateX(-50%) scale(0); }
+  }
+
+  @media (max-width: 380px) {
+    .form-row { flex-direction: column; }
+    .submit-btn { width: 100%; }
+  }
+</style>
+</head>
+
+<body>
+<main>
+
+  <span class="deco-leaf deco-leaf-1">🌿</span>
+  <span class="deco-leaf deco-leaf-2">🌱</span>
+  <span class="deco-leaf deco-leaf-3">🍃</span>
+
+  <div class="badge">Coming soon · founding 100</div>
+
+  <h1>Something <em>quiet</em><br/>is growing.</h1>
+
+  <p class="lead">
+    A mindful garden for you, and the people you love.
+    Tap. Bloom. Repeat.
+  </p>
+
+  <!-- DEMO ANIMATION -->
+  <div class="demo-wrap">
+    <div class="demo-stage">
+      <div class="fridge">
+        <div class="card-on-fridge">
+          <div class="card-logo">
+            <svg width="14" height="14" viewBox="0 0 48 48" fill="none">
+              <path d="M24 8C24 8 18 16 18 24C18 30 20.7 34 24 36C27.3 34 30 30 30 24C30 16 24 8 24 8Z" fill="#8B9E7E"/>
+              <circle cx="24" cy="20" r="3" fill="#C17F59"/>
+            </svg>
+            bloom
+          </div>
+          <div class="card-tag">tend your love,<br/>one tap at a time</div>
+        </div>
+      </div>
+      <div class="nfc-wave"></div>
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-garden"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMAIL FORM -->
+  <div class="form-wrap" id="formWrap">
+    <label class="form-label" for="email">
+      Be the first to know when we open.
+    </label>
+
+    <form id="signupForm">
+      <div class="form-row">
+        <input
+          type="email"
+          id="email"
+          class="email-input"
+          placeholder="you@email.com"
+          required
+          autocomplete="email"
+        />
+        <button type="submit" class="submit-btn" id="submitBtn">
+          Join 🌱
+        </button>
+      </div>
+      <p class="form-note">No spam — just one note when Bloom is ready.</p>
+      <div id="errorMsg" class="error-msg" style="display:none"></div>
+    </form>
+  </div>
+
+  <!-- SUCCESS STATE (hidden by default) -->
+  <div class="success" id="successState" style="display:none">
+    <div class="success-emoji">🌸</div>
+    <h2 class="success-title">You're on the list.</h2>
+    <p class="success-msg">
+      We'll send a quiet note when Bloom is ready.
+      Until then — thank you for being curious.
+    </p>
+  </div>
+
+  <footer>
+    <p>Made with love in <span>Cologne</span> 🇩🇪</p>
+  </footer>
+
+</main>
+
+<script type="module">
+  // ─── REPLACE THESE TWO VALUES with your Supabase credentials ───
+  const SUPABASE_URL = 'https://moulvpxjwevibmhwpqpe.supabase.co';
+const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY_HERE';
+
+  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  const form = document.getElementById('signupForm');
+  const formWrap = document.getElementById('formWrap');
+  const successState = document.getElementById('successState');
+  const errorMsg = document.getElementById('errorMsg');
+  const submitBtn = document.getElementById('submitBtn');
+  const emailInput = document.getElementById('email');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = emailInput.value.trim().toLowerCase();
+    if (!email) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    errorMsg.style.display = 'none';
+
+    try {
+      const { error } = await supabase.from('waitlist').insert({
+        email,
+        source: 'nfc_card_weekend',
+      });
+
+      if (error && error.code !== '23505') {
+        // 23505 = unique violation = already signed up (still success for them)
+        throw error;
+      }
+
+      // Success!
+      formWrap.style.display = 'none';
+      successState.style.display = 'block';
+
+    } catch (err) {
+      console.error('Signup error:', err);
+      errorMsg.textContent = 'Something went wrong. Please try again.';
+      errorMsg.style.display = 'block';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Join 🌱';
+    }
+  });
+</script>
+
+</body>
+</html>
