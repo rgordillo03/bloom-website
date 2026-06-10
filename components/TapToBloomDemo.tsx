@@ -32,8 +32,8 @@ export default function TapToBloomDemo() {
   const handleTap = () => {
     if (step !== 'rest') return;
     setStep('tapping');
-    setTimeout(() => setStep('opening'), 1200);
-    setTimeout(() => setStep('question'), 2000);
+    setTimeout(() => setStep('opening'), 1000);
+    setTimeout(() => setStep('question'), 1800);
   };
 
   const handleAnswer = () => {
@@ -50,7 +50,7 @@ export default function TapToBloomDemo() {
         setTimeout(() => {
           setStep('planted');
           setFlowers(f => [...f, Math.floor(Math.random() * FLOWER_COLORS.length)]);
-        }, 600);
+        }, 2500);
       }
     }, 40);
   };
@@ -80,7 +80,7 @@ export default function TapToBloomDemo() {
       } else if (step === 'question') {
         autoRef.current = setTimeout(handleAnswer, 1800);
       } else if (step === 'planted') {
-        autoRef.current = setTimeout(handleNext, 2800);
+        autoRef.current = setTimeout(handleNext, 3500);
       }
     };
     runAuto();
