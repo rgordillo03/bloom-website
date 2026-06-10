@@ -2,29 +2,29 @@
 export default function ThreeGardens() {
   const gardens = [
     {
-      icon: '🧘',
+      icon: '🌱',
       label: 'For yourself',
-      title: 'A quiet space for one',
-      quote: '"What\'s quietly asking for your attention right now?"',
+      title: 'A Personal safe space',
+      quote: '"What part of yourself needs more care right now?"',
       desc: 'Reflect privately. No followers, no streaks to chase. Just you, a question, and a garden that remembers.',
       color: '#8B9E7E',
       bg: 'rgba(139,158,126,0.08)',
     },
     {
-      icon: '💑',
-      label: 'Together',
-      title: 'A garden for two',
-      quote: '"What\'s one small thing they did this week that made you smile?"',
-      desc: 'For partners, parents, best friends. Reflect side by side, even when you\'re apart.',
+      icon: '🌸',
+      label: 'For Couples',
+      title: 'A Place to Grow Together',
+      quote: '"How can you helped each other lately to keep growing?"',
+      desc: 'Share reflections, Gratitude and Meaningful Moments for a Deeper connection.',
       color: '#C17F59',
       bg: 'rgba(193,127,89,0.08)',
     },
     {
-      icon: '🤝',
-      label: 'With your people',
-      title: 'A garden for your circle',
-      quote: '"What\'s a memory with this group you\'ll never forget?"',
-      desc: 'Family, chosen family, close friends. Stay rooted in each other across any distance.',
+      icon: '🌳',
+      label: 'For Groups',
+      title: 'A garden for your Close Circle',
+      quote: 'What makes this group feel like home?',
+      desc: 'Stay connected through shared memories and reflections.',
       color: '#C9A96E',
       bg: 'rgba(201,169,110,0.1)',
     },
@@ -45,7 +45,7 @@ export default function ThreeGardens() {
           </h2>
           <p style={{ fontSize: 17, color: 'var(--brown-m)', maxWidth: 560, margin: '0 auto', lineHeight: 1.6 }}>
             One simple ritual. Three ways to use it. Switch between gardens
-            whenever you need to — just like you switch between accounts.
+            whenever you want.
           </p>
         </div>
 
