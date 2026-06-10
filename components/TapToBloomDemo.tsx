@@ -32,8 +32,8 @@ export default function TapToBloomDemo() {
   const handleTap = () => {
     if (step !== 'rest') return;
     setStep('tapping');
-    setTimeout(() => setStep('opening'), 800);
-    setTimeout(() => setStep('question'), 1500);
+    setTimeout(() => setStep('opening'), 1200);
+    setTimeout(() => setStep('question'), 2000);
   };
 
   const handleAnswer = () => {
