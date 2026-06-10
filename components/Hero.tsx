@@ -53,7 +53,7 @@ export default function Hero() {
         marginBottom: 32,
         animation: 'fadeUp 1s ease 0.15s both',
       }}>
-        Your <em>hybrid</em><br/>mindfulness garden.
+        Your hybrid<br/><em>Mindfulness Garden.</em>
       </h1>
 
       <p style={{
@@ -64,7 +64,7 @@ export default function Hero() {
         marginBottom: 48,
         animation: 'fadeUp 1s ease 0.3s both',
       }}>
-        A safe space to reflect. One tap a day.
+        A safe space to . One tap a day.
       </p>
 
       <div style={{
@@ -102,7 +102,7 @@ export default function Hero() {
     </section>
   );
 }
-
+ {/* Hero headline 
 function FridgeScene() {
   return (
     <div style={{
@@ -114,7 +114,7 @@ function FridgeScene() {
       overflow: 'hidden',
       boxShadow: '0 40px 80px -20px rgba(46,36,28,0.28), 0 20px 40px -10px rgba(46,36,28,0.15), inset 0 1px 0 rgba(255,255,255,0.5)',
     }}>
-      {/* Fridge inner border */}
+      {/* Fridge inner border 
       <div style={{
         position: 'absolute', top: 30, left: 30, right: 30, bottom: 30,
         border: '1.5px solid rgba(46,36,28,0.07)',
@@ -122,7 +122,7 @@ function FridgeScene() {
         pointerEvents: 'none',
       }}/>
 
-      {/* Fridge handle */}
+      {/* Fridge handle 
       <div style={{
         position: 'absolute', top: '50%', right: 40,
         transform: 'translateY(-50%)',
@@ -131,7 +131,7 @@ function FridgeScene() {
         borderRadius: 5,
       }}/>
 
-      {/* Decorative leaves */}
+      {/* Decorative leaves 
       <svg style={{
         position: 'absolute', top: 50, left: 50, opacity: 0.5,
         animation: 'leafSway 6s ease-in-out infinite',
@@ -146,7 +146,7 @@ function FridgeScene() {
         <path d="M30 10C30 10 45 25 40 45C40 45 20 35 30 10Z" fill="#B5C7A9"/>
       </svg>
 
-      {/* Photo magnet */}
+      {/* Photo magnet 
       <div style={{
         position: 'absolute',
         top: 60, right: 100,
@@ -170,7 +170,7 @@ function FridgeScene() {
         }}/>
       </div>
 
-      {/* THE BLOOM CARD — the star of the scene */}
+      {/* THE BLOOM CARD — the star of the scene 
       <div style={{
         position: 'absolute',
         top: '50%', left: '50%',
@@ -186,13 +186,13 @@ function FridgeScene() {
         justifyContent: 'space-between',
         animation: 'floatGentle 4s ease-in-out infinite',
       }}>
-        {/* NFC icon */}
+        {/* NFC icon 
         <svg style={{ position: 'absolute', top: 18, right: 18, opacity: 0.4 }}
           width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
           <path d="M3 12c0-5 4-9 9-9m-9 9c0 5 4 9 9 9M7 12c0-3 2-5 5-5m-5 5c0 3 2 5 5 5m-1-5a1 1 0 112 0 1 1 0 01-2 0z"/>
         </svg>
 
-        {/* Logo + name */}
+        {/* Logo + name 
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <svg width="20" height="20" viewBox="0 0 48 48" fill="none">
             <path d="M24 8C24 8 18 16 18 24C18 30 20.7 34 24 36C27.3 34 30 30 30 24C30 16 24 8 24 8Z" fill="#8B9E7E"/>
@@ -207,7 +207,7 @@ function FridgeScene() {
           }}>bloom</span>
         </div>
 
-        {/* Tagline */}
+        {/* Tagline 
         <div style={{
           fontFamily: 'Fraunces, serif',
           fontStyle: 'italic',
@@ -219,7 +219,7 @@ function FridgeScene() {
         </div>
       </div>
 
-      {/* Glow under card */}
+      {/* Glow under card 
       <div style={{
         position: 'absolute', top: '50%', left: '50%',
         transform: 'translate(-50%, -50%)',
@@ -230,3 +230,4 @@ function FridgeScene() {
     </div>
   );
 }
+*/}
