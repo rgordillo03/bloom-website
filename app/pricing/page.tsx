@@ -110,9 +110,9 @@ export default function Pricing() {
             saving="-50%"
             features={[
               'Full Bloom garden app (lifetime access)',
-              'Solo, Together, or With your people modes',
+              'Solo, Couple, or Group modes',
               'One daily question, your own garden',
-              'No streaks, no notifications, no ads',
+              'Not App. No Ads. No notifications.',
               'Available instantly when we open',
             ]}
             ribbon={null}
@@ -129,11 +129,11 @@ export default function Pricing() {
             id="card"
             name="Bloom Card"
             tag="Bamboo NFC + lifetime app"
-            description="The hybrid version. A bamboo card on your fridge that opens your garden with one tap. Choose for yourself or for two."
+            description="The hybrid version. A bamboo card that opens your garden with one tap. Choose Solo or Couple."
             price="$14.99 / $24.99"
             original="$29.99 / $49.99"
             saving="-50%"
-            tiers={['For yourself: $14.99', 'Together: $24.99']}
+            tiers={['Solo: $14.99', 'Couple: $24.99']}
             features={[
               'Bamboo NFC card (or pair of cards)',
               'Everything in Bloom Digital',
