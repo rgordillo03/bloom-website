@@ -76,11 +76,11 @@ export default function TapToBloomDemo() {
     }
     const runAuto = () => {
       if (step === 'rest') {
-        autoRef.current = setTimeout(handleTap, 1200);
+        autoRef.current = setTimeout(handleTap, 1500);
       } else if (step === 'question') {
-        autoRef.current = setTimeout(handleAnswer, 1500);
+        autoRef.current = setTimeout(handleAnswer, 1800);
       } else if (step === 'planted') {
-        autoRef.current = setTimeout(handleNext, 2500);
+        autoRef.current = setTimeout(handleNext, 2800);
       }
     };
     runAuto();
@@ -117,7 +117,7 @@ export default function TapToBloomDemo() {
             maxWidth: 540, margin: '0 auto', lineHeight: 1.6,
           }}>
             Thirty seconds a day. No login, no scrolling, no overload.
-            Try it below — it's a real demo.
+            Try it below in our real demo.
           </p>
         </div>
 
