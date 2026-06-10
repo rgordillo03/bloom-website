@@ -327,42 +327,73 @@ function ProductCard({ id, name, tag, description, price, original, saving, tier
       </p>
 
       {tiers ? (
-        <div style={{ marginBottom: 24 }}>
-          {tiers.map((t: string, i: number) => (
-            <div key={i} style={{
-              display: 'flex', justifyContent: 'space-between', alignItems: 'baseline',
-              padding: '10px 14px', background: 'rgba(255,255,255,0.5)',
-              borderRadius: 10, marginBottom: 6,
-              fontSize: 14, color: 'var(--brown)',
-            }}>
-              <span>{t.split(':')[0]}</span>
-              <span style={{ fontFamily: 'Fraunces, serif', fontWeight: 500, color: 'var(--ink)' }}>
-                {t.split(':')[1]}
-              </span>
-            </div>
-          ))}
-          <p style={{ fontSize: 11, color: 'var(--brown-l)', textAlign: 'right', marginTop: 6 }}>
-            Original {original} &middot; saving {saving}
-          </p>
-        </div>
-      ) : (
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginBottom: 24 }}>
-          <span style={{ fontFamily: 'Fraunces, serif', fontSize: 44, fontWeight: 500, color: 'var(--ink)', letterSpacing: '-0.02em', lineHeight: 1 }}>
-            {price}
-          </span>
-          <span style={{ fontSize: 18, color: 'var(--brown-l)', textDecoration: 'line-through' }}>
-            {original}
-          </span>
-          <span style={{
-            padding: '4px 10px', background: 'var(--terra)',
-            color: '#fff', fontSize: 11, fontWeight: 600,
-            borderRadius: 4, letterSpacing: '0.04em',
+  <div style={{ marginBottom: 24 }}>
+    {tiers.map((t: string, i: number) => {
+      const [label, price] = t.split(':').map(s => s.trim());
+      const originalPrices = ['$29.99', '$49.99'];
+      return (
+        <div key={i} style={{
+          marginBottom: i === 0 ? 20 : 0,
+          paddingBottom: i === 0 ? 20 : 0,
+          borderBottom: i === 0 ? '1px solid rgba(193,127,89,0.15)' : 'none',
+        }}>
+          <p style={{
+            fontSize: 11,
+            color: 'var(--terra)',
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            fontWeight: 500,
+            marginBottom: 8,
           }}>
-            {saving}
-          </span>
+            {label}
+          </p>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, flexWrap: 'wrap' }}>
+            <span style={{
+              fontFamily: 'Fraunces, serif',
+              fontSize: 44,
+              fontWeight: 500,
+              color: 'var(--ink)',
+              letterSpacing: '-0.02em',
+              lineHeight: 1,
+            }}>
+              {price}
+            </span>
+            <span style={{ fontSize: 18, color: 'var(--brown-l)', textDecoration: 'line-through' }}>
+              {originalPrices[i]}
+            </span>
+            <span style={{
+              padding: '4px 10px',
+              background: 'var(--terra)',
+              color: '#fff',
+              fontSize: 11,
+              fontWeight: 600,
+              borderRadius: 4,
+              letterSpacing: '0.04em',
+            }}>
+              -50%
+            </span>
+          </div>
         </div>
-      )}
-
+      );
+    })}
+  </div>
+) : (
+  <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginBottom: 24 }}>
+    <span style={{ fontFamily: 'Fraunces, serif', fontSize: 44, fontWeight: 500, color: 'var(--ink)', letterSpacing: '-0.02em', lineHeight: 1 }}>
+      {price}
+    </span>
+    <span style={{ fontSize: 18, color: 'var(--brown-l)', textDecoration: 'line-through' }}>
+      {original}
+    </span>
+    <span style={{
+      padding: '4px 10px', background: 'var(--terra)',
+      color: '#fff', fontSize: 11, fontWeight: 600,
+      borderRadius: 4, letterSpacing: '0.04em',
+    }}>
+      {saving}
+    </span>
+  </div>
+)}
       <ul style={{ listStyle: 'none', marginBottom: 28 }}>
         {features.map((f: any, i: number) => (
           <li key={i} style={{
