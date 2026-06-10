@@ -24,10 +24,10 @@ export default function TrustAndCTA() {
           gap: 40,
         }}>
           {[
-            { icon: '🇩🇪', title: 'Made in Germany', desc: 'Designed, packed, and shipped locally with minimal CO₂.' },
-            { icon: '🌱', title: 'Bamboo, not plastic', desc: 'Cards are biodegradable and built to last on your fridge.' },
+            { icon: '🇩🇪', title: 'Made in Germany', desc: 'Designed, packed, and shipped by me with minimal CO₂.' },
+            { icon: '🌱', title: 'Bamboo, not plastic', desc: 'Cards are biodegradable and built to last.' },
             { icon: '🔒', title: 'Private by design', desc: 'GDPR. EU servers. No ads. Your reflections stay yours.' },
-            { icon: '📱', title: 'No app to install', desc: 'NFC opens it. Works with any phone made in the last 8 years.' },
+            { icon: '📱', title: 'No app to install', desc: 'NFC opens it. Works with any phone.' },
           ].map((item, i) => (
             <div key={i} style={{ textAlign: 'center' }}>
               <div style={{ fontSize: 32, marginBottom: 12 }}>{item.icon}</div>
@@ -74,7 +74,7 @@ export default function TrustAndCTA() {
             lineHeight: 1.6, marginBottom: 40,
           }}>
             Bloom isn't out yet. Founding 100 members get 50% off forever
-            and the first cards we ship. Leave your email — I'll let you know when we're ready.
+            and the first cards we ship. Leave your email and I'll let you know when we're ready.
           </p>
           <Link href="/pricing" className="btn btn-primary" style={{
             background: 'var(--bg)', color: 'var(--ink)',
