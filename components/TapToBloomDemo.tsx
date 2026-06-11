@@ -177,46 +177,88 @@ export default function TapToBloomDemo() {
               </div>
             )}
 
-            {/* The card */}
+            {/* The card — simulates the real bamboo Bloom card */}
             <div style={{
               position: 'absolute',
               top: '50%', left: '50%',
               transform: `translate(-50%, -50%) rotate(${step === 'tapping' ? '-2deg' : '-4deg'}) scale(${step === 'tapping' ? 1.05 : 1})`,
-              width: '70%',
-              aspectRatio: '1.6/1',
-              background: 'linear-gradient(145deg, #FDF9F3 0%, #F5EBD9 100%)',
-              borderRadius: 14,
+              width: '52%',
+              aspectRatio: '0.62/1',
+              background: `
+                linear-gradient(135deg, rgba(255,255,255,0.08), rgba(0,0,0,0.05)),
+                repeating-linear-gradient(90deg,
+                  #E8C896 0px, #E8C896 1px,
+                  #DFB97F 1px, #DFB97F 2px,
+                  #E5C28A 2px, #E5C28A 4px),
+                linear-gradient(180deg, #E8C896 0%, #D4A968 50%, #E2BC82 100%)
+              `,
+              borderRadius: 12,
               boxShadow: step === 'tapping'
-                ? '0 24px 50px -10px rgba(193,127,89,0.45), 0 0 60px rgba(255,233,196,0.6)'
-                : '0 20px 40px -10px rgba(46,36,28,0.3), 0 10px 20px -5px rgba(46,36,28,0.2)',
-              padding: '16px 18px',
+                ? '0 24px 50px -10px rgba(193,127,89,0.45), 0 0 60px rgba(255,233,196,0.6), inset 0 1px 0 rgba(255,255,255,0.4)'
+                : '0 20px 40px -10px rgba(46,36,28,0.35), 0 10px 20px -5px rgba(46,36,28,0.25), inset 0 1px 0 rgba(255,255,255,0.4)',
+              padding: '14px 12px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
+              alignItems: 'center',
               transition: 'all 0.4s cubic-bezier(0.22,1,0.36,1)',
               animation: step === 'rest' ? 'floatGentle 4s ease-in-out infinite' : 'none',
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                <svg width="16" height="16" viewBox="0 0 48 48" fill="none">
-                  <path d="M24 8C24 8 18 16 18 24C18 30 20.7 34 24 36C27.3 34 30 30 30 24C30 16 24 8 24 8Z" fill="#8B9E7E"/>
-                  <circle cx="24" cy="20" r="3" fill="#C17F59"/>
-                </svg>
-                <span style={{
-                  fontFamily: 'Fraunces, serif',
-                  fontSize: 17,
-                  fontWeight: 500,
-                  color: 'var(--ink)',
-                }}>bloom</span>
-              </div>
+              {/* BLOOM text at top — engraved look */}
               <div style={{
-                fontFamily: 'Fraunces, serif',
-                fontStyle: 'italic',
-                fontSize: 10,
-                color: 'var(--brown-m)',
-                lineHeight: 1.3,
-              }}>tap. reflect.<br/>grow.</div>
-            </div>
+                fontFamily: 'Inter, sans-serif',
+                fontSize: 11,
+                fontWeight: 500,
+                letterSpacing: '0.32em',
+                color: '#8B5A3C',
+                textShadow: '0 1px 0 rgba(255,255,255,0.3)',
+                opacity: 0.85,
+              }}>BLOOM</div>
 
+              {/* The flower engraving in the middle */}
+              <svg width="60%" viewBox="0 0 60 80" fill="none" style={{ opacity: 0.75 }}>
+                <g stroke="#8B5A3C" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" fill="none">
+                  {/* 8 petals */}
+                  <g transform="rotate(0 30 30)"><path d="M30 27 C27 25 25 21 27 18 C28 17 29 17 30 18 C31 17 32 17 33 18 C35 21 33 25 30 27 Z"/></g>
+                  <g transform="rotate(45 30 30)"><path d="M30 27 C27 25 25 21 27 18 C28 17 29 17 30 18 C31 17 32 17 33 18 C35 21 33 25 30 27 Z"/></g>
+                  <g transform="rotate(90 30 30)"><path d="M30 27 C27 25 25 21 27 18 C28 17 29 17 30 18 C31 17 32 17 33 18 C35 21 33 25 30 27 Z"/></g>
+                  <g transform="rotate(135 30 30)"><path d="M30 27 C27 25 25 21 27 18 C28 17 29 17 30 18 C31 17 32 17 33 18 C35 21 33 25 30 27 Z"/></g>
+                  <g transform="rotate(180 30 30)"><path d="M30 27 C27 25 25 21 27 18 C28 17 29 17 30 18 C31 17 32 17 33 18 C35 21 33 25 30 27 Z"/></g>
+                  <g transform="rotate(225 30 30)"><path d="M30 27 C27 25 25 21 27 18 C28 17 29 17 30 18 C31 17 32 17 33 18 C35 21 33 25 30 27 Z"/></g>
+                  <g transform="rotate(270 30 30)"><path d="M30 27 C27 25 25 21 27 18 C28 17 29 17 30 18 C31 17 32 17 33 18 C35 21 33 25 30 27 Z"/></g>
+                  <g transform="rotate(315 30 30)"><path d="M30 27 C27 25 25 21 27 18 C28 17 29 17 30 18 C31 17 32 17 33 18 C35 21 33 25 30 27 Z"/></g>
+                  {/* stem */}
+                  <path d="M30 40 C29 50 30 60 30 66"/>
+                  {/* leaves */}
+                  <path d="M29 50 C24 49 19 47 17 44 C20 44 26 46 29 50 Z"/>
+                  <path d="M30 48 C35 47 40 45 42 42 C39 42 33 44 30 48 Z"/>
+                  <path d="M30 58 C26 58 22 57 20 55 C23 54 27 55 30 58 Z"/>
+                  <path d="M30 56 C34 55 38 56 41 58 C38 60 33 58 30 56 Z"/>
+                  {/* center circle */}
+                  <circle cx="30" cy="30" r="3" strokeWidth="1.2"/>
+                </g>
+                {/* center dots */}
+                <g fill="#8B5A3C" opacity="0.85">
+                  <circle cx="30" cy="28.8" r="0.6"/>
+                  <circle cx="28.8" cy="29.6" r="0.6"/>
+                  <circle cx="31.2" cy="29.6" r="0.6"/>
+                  <circle cx="29.3" cy="31" r="0.6"/>
+                  <circle cx="30.7" cy="31" r="0.6"/>
+                </g>
+              </svg>
+
+              {/* TAP TO REFLECT footer text */}
+              <div style={{
+                fontFamily: 'Inter, sans-serif',
+                fontSize: 8,
+                fontWeight: 500,
+                letterSpacing: '0.22em',
+                color: '#8B5A3C',
+                textShadow: '0 1px 0 rgba(255,255,255,0.3)',
+                opacity: 0.85,
+              }}>TAP TO REFLECT</div>
+            </div>
+            
             {/* "Tap me" hint */}
             {step === 'rest' && !autoMode && (
               <div style={{
