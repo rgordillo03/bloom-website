@@ -51,7 +51,7 @@ export default function Nav() {
               <circle cx="30.7" cy="27" r="0.7"/>
             </g>
           </svg>
-          bloom
+          BLOOM
         </Link>
 
         {/* Desktop nav */}
