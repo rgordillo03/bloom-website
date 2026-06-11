@@ -22,15 +22,15 @@ export default function Impressum() {
 
       <h4>Postanschrift</h4>
       <p>
-        [STRASSE UND HAUSNUMMER]<br/>
-        [PLZ] Köln<br/>
+        Niehler Str. 271<br/>
+        50735 Köln<br/>
         Deutschland
       </p>
 
       <h4>Kontakt</h4>
       <p>
-        E-Mail: hello@trybloom.co<br/>
-        Telefon: [OPTIONAL]
+        E-Mail: rafael.gordilloapel@gmail.com br/>
+        Telefon: 0174 8008053
       </p>
 
       <h3>Rechtsform (aktuell)</h3>
@@ -84,15 +84,15 @@ export default function Impressum() {
 
       <h4>Postal address</h4>
       <p>
-        [STREET ADDRESS]<br/>
-        [POSTAL CODE] Cologne<br/>
+        Niehler Str. 271 <br/>
+        50735 Cologne<br/>
         Germany
       </p>
 
       <h4>Contact</h4>
       <p>
-        Email: hello@trybloom.co<br/>
-        Phone: [OPTIONAL]
+        Email: rafael.gordilloapel@gmail.com <br/>
+        Phone: 174 8008053
       </p>
 
       <h3>Legal form (current)</h3>
