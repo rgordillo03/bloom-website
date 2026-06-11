@@ -29,7 +29,7 @@ export default function Impressum() {
 
       <h4>Kontakt</h4>
       <p>
-        E-Mail: rafael.gordilloapel@gmail.com br/>
+        E-Mail: rafael.gordilloapel@gmail.com <br/>
         Telefon: 0174 8008053
       </p>
 
