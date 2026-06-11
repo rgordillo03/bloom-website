@@ -44,7 +44,7 @@ export default function Hero() {
           background: 'var(--terra)',
           animation: 'pulse 2s ease-in-out infinite',
         }}/>
-        Coming soon · founding 100
+        Coming Soon · Founding 100
       </div>
 
       {/* Hero headline */}
@@ -53,7 +53,7 @@ export default function Hero() {
         marginBottom: 32,
         animation: 'fadeUp 1s ease 0.15s both',
       }}>
-        Your hybrid<br/><em>Mindfulness Garden.</em>
+        Your Hybrid<br/><em>Mindfulness Garden.</em>
       </h1>
 
       <p style={{
@@ -64,7 +64,7 @@ export default function Hero() {
         marginBottom: 48,
         animation: 'fadeUp 1s ease 0.3s both',
       }}>
-        A safe space to reflect. One tap a day.
+        A Safe Space to Reflect. One Tap a Day.
       </p>
 
       <div style={{
@@ -73,13 +73,13 @@ export default function Hero() {
         animation: 'fadeUp 1s ease 0.45s both',
       }}>
         <Link href="/pricing" className="btn btn-primary">
-          Notify me when ready
+          Notify me when Ready
           <svg className="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>
         </Link>
         <a href="#experience" className="btn btn-secondary">
-          See how it works
+          See how it Works
         </a>
       </div>
 
@@ -87,7 +87,7 @@ export default function Hero() {
         fontSize: 12, color: 'var(--brown-l)', letterSpacing: '0.03em',
         animation: 'fadeUp 1s ease 0.6s both',
       }}>
-        Made and shipped in Germany · Low-CO₂ local production · Works with any phone
+        Made and shipped in Germany · Low-CO₂ local Production · Works with any phone
       </p>
     </section>
   );
