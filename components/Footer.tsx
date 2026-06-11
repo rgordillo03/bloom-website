@@ -9,7 +9,6 @@ export default function Footer() {
       position: 'relative',
       overflow: 'hidden',
     }}>
-      {/* Subtle gradient overlay */}
       <div style={{
         position: 'absolute', inset: 0,
         background: 'radial-gradient(ellipse 60% 40% at 20% 0%, rgba(193,127,89,0.12), transparent 60%), radial-gradient(ellipse 40% 30% at 90% 100%, rgba(139,158,126,0.1), transparent 60%)',
@@ -21,7 +20,8 @@ export default function Footer() {
         display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 48,
       }}>
         {/* Brand column */}
-  <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
             <svg width="26" height="26" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g stroke="#D4A574" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none">
                 <g transform="rotate(0 30 26)"><path d="M30 23 C27 21 25 17 27 14 C28 13 29 13 30 14 C31 13 32 13 33 14 C35 17 33 21 30 23 Z"/></g>
