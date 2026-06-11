@@ -9,18 +9,18 @@ export default function Impressum() {
   return (
     <LegalLayout
       title="Impressum"
-      subtitle="Legal notice per § 5 TMG"
-      lastUpdated="May 2026"
+      subtitle="Legal notice per § 5 TMG (German Telemedia Act)"
+      lastUpdated="June 2026"
     >
       <h2>🇩🇪 Impressum (Deutsch)</h2>
 
       <h3>Angaben gemäß § 5 TMG</h3>
       <p>
         <strong>Bloom — A mindful garden</strong> (working title)<br/>
-        Inhaber / Gründer: Rafael Gordillo
+        Gegründet von Rafael Gordillo &amp; Eckard Schumann
       </p>
 
-      <h4>Anschrift</h4>
+      <h4>Postanschrift</h4>
       <p>
         [STRASSE UND HAUSNUMMER]<br/>
         [PLZ] Köln<br/>
@@ -35,16 +35,22 @@ export default function Impressum() {
 
       <h3>Rechtsform (aktuell)</h3>
       <p>
-        Einzelunternehmen <em>(während der Gründungsphase der UG/GmbH)</em>
+        Gesellschaft bürgerlichen Rechts (GbR) <em>(während der Gründungsphase der UG/GmbH)</em>
       </p>
       <blockquote>
-        <strong>Hinweis:</strong> Eine UG/GmbH (haftungsbeschränkt) befindet sich in Gründung. Bis zum Abschluss der Eintragung im Handelsregister haftet der Inhaber persönlich.
+        <strong>Hinweis:</strong> Eine UG (haftungsbeschränkt) befindet sich in Gründung. Bis zum Abschluss der Eintragung im Handelsregister haften beide Gesellschafter persönlich und gesamtschuldnerisch.
       </blockquote>
+
+      <h3>Vertretungsberechtigte Gesellschafter</h3>
+      <p>
+        Rafael Gordillo &mdash; Co-Founder &amp; Geschäftsführer<br/>
+        Eckard Schumann &mdash; Co-Founder &amp; Geschäftsführer
+      </p>
 
       <h3>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h3>
       <p>
-        Rafael Gordillo<br/>
-        [ADRESSE WIE OBEN]
+        Rafael Gordillo &amp; Eckard Schumann<br/>
+        [Adresse wie oben]
       </p>
 
       <h3>Streitbeilegung</h3>
@@ -58,7 +64,7 @@ export default function Impressum() {
 
       <h3>Haftung für Inhalte</h3>
       <p>
-        Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.
+        Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
       </p>
 
       <h3>Urheberrecht</h3>
@@ -73,10 +79,10 @@ export default function Impressum() {
       <h3>Information per § 5 TMG (German Telemedia Act)</h3>
       <p>
         <strong>Bloom — A mindful garden</strong> (working title)<br/>
-        Owner / Founder: Rafael Gordillo
+        Founded by Rafael Gordillo &amp; Eckard Schumann
       </p>
 
-      <h4>Address</h4>
+      <h4>Postal address</h4>
       <p>
         [STREET ADDRESS]<br/>
         [POSTAL CODE] Cologne<br/>
@@ -89,16 +95,22 @@ export default function Impressum() {
         Phone: [OPTIONAL]
       </p>
 
-      <h3>Legal Form</h3>
+      <h3>Legal form (current)</h3>
       <p>
-        Sole proprietorship <em>(during the formation phase of UG/GmbH)</em>
+        German civil law partnership (Gesellschaft bürgerlichen Rechts, GbR) <em>during the formation phase of the UG/GmbH</em>.
       </p>
       <blockquote>
-        <strong>Notice:</strong> A UG/GmbH (haftungsbeschränkt) is currently being formed. Until registration in the German commercial register is complete, the owner is personally liable.
+        <strong>Notice:</strong> A UG (haftungsbeschränkt) is currently being formed. Until the registration in the German commercial register is complete, both partners are personally and jointly liable.
       </blockquote>
 
+      <h3>Authorized representatives</h3>
+      <p>
+        Rafael Gordillo &mdash; Co-Founder &amp; Managing Director<br/>
+        Eckard Schumann &mdash; Co-Founder &amp; Managing Director
+      </p>
+
       <h3>Responsible for content per § 18 Para. 2 MStV</h3>
-      <p>Rafael Gordillo, [address above]</p>
+      <p>Rafael Gordillo &amp; Eckard Schumann, address as above.</p>
 
       <h3>Dispute Resolution</h3>
       <p>
