@@ -14,26 +14,41 @@ export default function Nav() {
   }, []);
 
   return (
-    <nav style={{
-      position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-      padding: '18px 32px',
-      background: scrolled ? 'rgba(250,247,242,0.92)' : 'transparent',
-      backdropFilter: scrolled ? 'blur(20px)' : 'none',
-      borderBottom: scrolled ? '1px solid rgba(193,127,89,0.08)' : '1px solid transparent',
-      transition: 'all 0.3s ease',
-    }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Link href="/" style={{
+    <Link href="/" style={{
           fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 500,
-          color: 'var(--ink)', letterSpacing: '-0.02em', display: 'flex', alignItems: 'center', gap: 8,
+          color: 'var(--ink)', letterSpacing: '-0.02em', display: 'flex', alignItems: 'center', gap: 10,
         }}>
-          <svg width="26" height="26" viewBox="0 0 48 48" fill="none">
-            <path d="M24 8C24 8 18 16 18 24C18 30 20.7 34 24 36C27.3 34 30 30 30 24C30 16 24 8 24 8Z" fill="#8B9E7E"/>
-            <circle cx="24" cy="20" r="3" fill="#C17F59"/>
+          <svg width="28" height="28" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="#2F4032" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none">
+              {/* 8 petals around center */}
+              <g transform="rotate(0 30 26)"><path d="M30 23 C27 21 25 17 27 14 C28 13 29 13 30 14 C31 13 32 13 33 14 C35 17 33 21 30 23 Z"/></g>
+              <g transform="rotate(45 30 26)"><path d="M30 23 C27 21 25 17 27 14 C28 13 29 13 30 14 C31 13 32 13 33 14 C35 17 33 21 30 23 Z"/></g>
+              <g transform="rotate(90 30 26)"><path d="M30 23 C27 21 25 17 27 14 C28 13 29 13 30 14 C31 13 32 13 33 14 C35 17 33 21 30 23 Z"/></g>
+              <g transform="rotate(135 30 26)"><path d="M30 23 C27 21 25 17 27 14 C28 13 29 13 30 14 C31 13 32 13 33 14 C35 17 33 21 30 23 Z"/></g>
+              <g transform="rotate(180 30 26)"><path d="M30 23 C27 21 25 17 27 14 C28 13 29 13 30 14 C31 13 32 13 33 14 C35 17 33 21 30 23 Z"/></g>
+              <g transform="rotate(225 30 26)"><path d="M30 23 C27 21 25 17 27 14 C28 13 29 13 30 14 C31 13 32 13 33 14 C35 17 33 21 30 23 Z"/></g>
+              <g transform="rotate(270 30 26)"><path d="M30 23 C27 21 25 17 27 14 C28 13 29 13 30 14 C31 13 32 13 33 14 C35 17 33 21 30 23 Z"/></g>
+              <g transform="rotate(315 30 26)"><path d="M30 23 C27 21 25 17 27 14 C28 13 29 13 30 14 C31 13 32 13 33 14 C35 17 33 21 30 23 Z"/></g>
+              {/* stem */}
+              <path d="M30 36 C29 44 30 52 30 56"/>
+              {/* leaves */}
+              <path d="M29 44 C24 43 19 41 17 38 C20 38 26 40 29 44 Z"/>
+              <path d="M30 42 C35 41 40 39 42 36 C39 36 33 38 30 42 Z"/>
+              <path d="M30 51 C26 51 22 50 20 48 C23 47 27 48 30 51 Z"/>
+              {/* center circle */}
+              <circle cx="30" cy="26" r="3" stroke="#2F4032" strokeWidth="1.6"/>
+            </g>
+            {/* 5 terracotta dots in the center */}
+            <g fill="#C4633F">
+              <circle cx="30" cy="24.8" r="0.7"/>
+              <circle cx="28.8" cy="25.6" r="0.7"/>
+              <circle cx="31.2" cy="25.6" r="0.7"/>
+              <circle cx="29.3" cy="27" r="0.7"/>
+              <circle cx="30.7" cy="27" r="0.7"/>
+            </g>
           </svg>
           bloom
         </Link>
-
         {/* Desktop nav */}
         <div className="nav-desktop" style={{
           display: 'flex', gap: 36, alignItems: 'center',
