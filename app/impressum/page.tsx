@@ -22,15 +22,15 @@ export default function Impressum() {
 
       <h4>Postanschrift</h4>
       <p>
-        Niehler Str. 271<br/>
-        50735 Köln<br/>
+        [Niehler Str. 271]<br/>
+        [50735 Köln]<br/>
         Deutschland
       </p>
 
       <h4>Kontakt</h4>
       <p>
         E-Mail: rafael.gordilloapel@gmail.com <br/>
-        Telefon: 0174 8008053
+        Telefon: [0174 8008053]
       </p>
 
       <h3>Rechtsform (aktuell)</h3>
@@ -84,15 +84,15 @@ export default function Impressum() {
 
       <h4>Postal address</h4>
       <p>
-        Niehler Str. 271 <br/>
-        50735 Cologne<br/>
+        [Niehler Str. 271] <br/>
+        [50735 Cologne]<br/>
         Germany
       </p>
 
       <h4>Contact</h4>
       <p>
         Email: rafael.gordilloapel@gmail.com <br/>
-        Phone: 174 8008053
+        Phone: [0174 8008053]
       </p>
 
       <h3>Legal form (current)</h3>
